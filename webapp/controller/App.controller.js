@@ -7,7 +7,8 @@ sap.ui.define([
    	
       onShowHello : function () {
          // read msg from i18n model
-         var oBundle = this.getView().getModel("i18n").getResourceBundle();
+         var oModel = this.getView().getModel("i18n");
+         var oBundle = oModel.getResourceBundle();
          var sRecipient = this.getView().getModel().getProperty("/recipient/name");
          var sMsg = oBundle.getText("helloMsg", [sRecipient]);
          // show message
