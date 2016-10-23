@@ -19,8 +19,10 @@
       
       <script>
          sap.ui.getCore().attachInit(function () {
-            new sap.ui.core.ComponentContainer({
-            	name : "sap.ui.odataapp"
+            new sap.m.Shell({
+               app : new sap.ui.core.ComponentContainer({
+            			name : "sap.ui.odataapp"
+            		})
             }).placeAt("content");
          });
       </script>
