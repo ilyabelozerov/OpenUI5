@@ -10,7 +10,7 @@
 							<Button text="{i18n>showHelloButtonText}" press="onShowHello" class="myCustomButton"/>
 							<Input value="{/recipient/name}" valueLiveUpdate="true" width="60%"/>
 							<Text
-								text="Hi {/recipient/name}"
+								text="{i18n>helloWord} {/recipient/name}"
 								class ="sapUiSmallMargin sapThemeHighlight-asColor myCustomText"/>
 						</content>
 					</Panel>
