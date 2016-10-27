@@ -3,16 +3,11 @@ sap.ui.define([
    "sap/m/MessageToast"
 ], function (Controller, MessageToast) {
    "use strict";
-   return Controller.extend("sap.ui.odataapp.controller.App", {
-   	
-      onShowHello : function () {
-         // read msg from i18n model
-         var oModel = this.getView().getModel("i18n");
-         var oBundle = oModel.getResourceBundle();
-         var sRecipient = this.getView().getModel().getProperty("/recipient/name");
-         var sMsg = oBundle.getText("helloMsg", [sRecipient]);
-         // show message
-         MessageToast.show(sMsg);
-      }
-   });
+	return Controller.extend("sap.ui.odataapp.controller.App", {
+		onShowHello : function () {
+	        var oBundle = this.getView().getModel("i18n").getResourceBundle();
+	        var sMsg = oBundle.getText("helloMsg");
+			MessageToast.show(sMsg);
+    	}
+	});
 });

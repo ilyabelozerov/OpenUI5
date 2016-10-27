@@ -1,17 +1,50 @@
-<mvc:View controllerName="sap.ui.odataapp.controller.App" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" displayBlock="true">
+<mvc:View	controllerName="sap.ui.odataapp.controller.App" 
+			xmlns="sap.m"	
+			xmlns:mvc="sap.ui.core.mvc" 
+			xmlns:t="sap.ui.table"
+			displayBlock="true">
 	<App class="myAppDemoWT">
 		<pages>
 			<Page title="{i18n>homePageTitle}">
 				<content>
+					<Button
+						text="{i18n>showHelloButtonText}"
+						press="onShowHello"/>
 					<Panel headerText="{i18n>helloPanelTitle}" 
 						   class="sapUiResponsiveMargin"
 						   width="auto">
 						<content>
-							<Button text="{i18n>showHelloButtonText}" press="onShowHello" class="myCustomButton"/>
-							<Input value="{/recipient/name}" valueLiveUpdate="true" width="60%"/>
-							<Text
-								text="{i18n>helloWord} {/recipient/name}"
-								class ="sapUiSmallMargin sapThemeHighlight-asColor myCustomText"/>
+							<t:Table rows="{
+										   path: '/Products'
+										   }"
+									 >
+								<t:columns>
+									<t:Column>
+										<Label text="{i18n>ColumnID}"/>
+										<t:template>
+											<Text text="{Id}"/>
+										</t:template>
+									</t:Column>
+									<t:Column>
+										<Label text="{i18n>Name}"/>
+										<t:template>
+											<Text text="{Name}"/>
+										</t:template>
+									</t:Column>
+									<t:Column>
+										<Label text="{i18n>Price}"/>
+										<t:template>
+											<Text text="{Price}"/>
+										</t:template>
+									</t:Column>
+									<t:Column name="Category">
+										<Label text="{i18n>Category}"/>
+										<t:template>
+											<Text text="{Category}"/>
+										</t:template>
+									</t:Column>
+								</t:columns>
+							</t:Table>
 						</content>
 					</Panel>
 				</content>

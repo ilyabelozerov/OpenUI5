@@ -12,7 +12,7 @@
 		},
 		"dataSources" : {
             "default" : {
-                "uri" : "http://35.161.26.88:10000/",
+                "uri" : "https://35.161.26.88/",
                 "type" : "OData",
                 "settings" : {
                     "odataVersion" : "4.0"
@@ -51,8 +51,8 @@
 			"": {
                 "dataSource" : "default",
                 "settings" : {
-                    "synchronizationMode" : "None",
-                    "updateGroupId" : "myAppUpdateGroup"
+                    "synchronizationMode" : "None",                    
+                    "groupId" : "$direct"
                 }
 			}
 		},
