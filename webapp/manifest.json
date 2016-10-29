@@ -53,7 +53,8 @@
                 "settings" : {
                     "synchronizationMode" : "None",                    
                     "updateGroupId" : "myAppUpdateGroup",
-                    "groupId" : "$direct"
+                    "operationMode": "Server",
+                    "groupId" : "$auto"
                 }
 			}
 		},
